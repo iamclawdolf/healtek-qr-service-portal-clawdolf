@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import {
-  Flex,
-  View,
-} from '@adobe/react-spectrum';
 
 // --- Icons ---
 const MenuIcon = () => (
@@ -72,7 +68,7 @@ const ASSET_DATA = {
   description: "The PlatsVac P7 is a high-performance vacuum aspiration system designed for surgical suites. Features ultra-quiet operation, HEPA filtration, and a compact footprint.",
   dimensions: "24 x 27 x 19 cm",
   weight: "5.4 Kg",
-  image: "https://i.ibb.co/pB29yHsG/IMG-6671.png" // Placeholder, will replace with asset URL or local
+  image: "https://i.ibb.co/pB29yHsG/IMG-6671.png" // Placeholder
 };
 
 function Header() {
@@ -133,11 +129,11 @@ function AssetDetail() {
           <div className="info-col">
             <div className="info-group">
               <label>Product code</label>
-              <a href="#" className="link-text">{ASSET_DATA.productCode}</a>
+              <button className="link-text">{ASSET_DATA.productCode}</button>
             </div>
             <div className="info-group">
               <label>Serial number</label>
-              <a href="#" className="link-text">{ASSET_DATA.serialNumber}</a>
+              <button className="link-text">{ASSET_DATA.serialNumber}</button>
             </div>
             
             <div className="status-section">
