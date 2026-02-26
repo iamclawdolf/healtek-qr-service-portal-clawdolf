@@ -134,10 +134,7 @@ function AssetDetail() {
             </div>
             
             <div className="status-section">
-              <div className="status-badge red">
-                <span className="dot"></span>
-                {ASSET_DATA.status}
-              </div>
+              <span className="status-text">{ASSET_DATA.status}</span>
               
               <div className="status-dates">
                 <div className="date-row">
