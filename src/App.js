@@ -70,13 +70,12 @@ function Header() {
     <header className="app-header">
       <div className="header-left">
         <div className="logo-area">
-          <div className="logo-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="2" width="20" height="20" rx="4" fill="#00C2E0" />
-              <path d="M12 6v12M6 12h12" stroke="white" strokeWidth="3" />
-            </svg>
-          </div>
-          <span className="logo-text">Healtek</span>
+          <img 
+            src={process.env.PUBLIC_URL + '/logo-healtek.png'} 
+            alt="Healtek Logo" 
+            className="logo-img"
+            style={{ height: '32px', width: 'auto' }}
+          />
         </div>
       </div>
       <div className="header-right">
