@@ -126,15 +126,20 @@ function AssetDetail() {
           <div className="info-col">
             <div className="info-group">
               <label>Product code</label>
-              <button className="link-text">{ASSET_DATA.productCode}</button>
+              <span className="info-value link-style">{ASSET_DATA.productCode}</span>
             </div>
             <div className="info-group">
               <label>Serial number</label>
-              <button className="link-text">{ASSET_DATA.serialNumber}</button>
+              <span className="info-value link-style">{ASSET_DATA.serialNumber}</span>
             </div>
             
-            <div className="status-section">
-              <span className="status-text">{ASSET_DATA.status}</span>
+            <div className="status-box">
+              <div className="status-badge-container">
+                <span className="status-badge red">
+                   <span className="dot"></span>
+                   {ASSET_DATA.status}
+                </span>
+              </div>
               
               <div className="status-dates">
                 <div className="date-row">
