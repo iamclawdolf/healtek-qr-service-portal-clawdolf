@@ -82,8 +82,8 @@ function Header() {
           alt="Healtek Logo"
           className="logo-img"
         />
-        <div className="header-divider"></div>
         <button className="icon-btn"><GridDotsIcon /></button>
+        <div className="header-divider"></div>
       </div>
     </header>
   );
@@ -110,17 +110,24 @@ function AssetDetail() {
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="tabs-nav">
-          {['Overview', 'Service history', 'Documents', 'Gallery'].map(tab => (
-            <button
-              key={tab}
-              className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* Tabs (exact structure from atollon-cv-search-frontend-clawdolf) */}
+        <div className="custom-tabs-container">
+          <div className="custom-tab-list">
+            {['Overview', 'Service history', 'Documents', 'Gallery'].map(tab => (
+              <div
+                key={tab}
+                className={`custom-tab-item ${activeTab === tab ? 'is-selected' : ''}`}
+                onClick={() => setActiveTab(tab)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') setActiveTab(tab);
+                }}
+              >
+                {tab}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -168,7 +175,7 @@ function AssetDetail() {
 
           {/* Right Column: Image */}
           <div className="image-col">
-            <img src={process.env.PUBLIC_URL + '/device-image.png'} alt="PlatsVac P7" className="asset-image" />
+            <img src={process.env.PUBLIC_URL + '/device-image.jpg'} alt="PlatsVac P7" className="asset-image" />
           </div>
         </div>
 
