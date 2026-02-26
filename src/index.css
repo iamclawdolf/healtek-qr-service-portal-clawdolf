@@ -1,0 +1,55 @@
+:root,
+.spectrum {
+  --spectrum-global-font-family-base: "Adobe Clean", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Ensure Spectrum aliases also use Adobe Clean */
+  --spectrum-alias-body-text-font-family: var(--spectrum-global-font-family-base);
+  --spectrum-alias-heading-text-font-family: var(--spectrum-global-font-family-base);
+}
+
+html,
+body {
+  margin: 0;
+  font-family: var(--spectrum-global-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ------------------------------------------------------------
+   FONT NUCLEAR OPTION
+   Force Adobe Clean everywhere, regardless of component styles.
+   This intentionally overrides React Spectrum and any custom CSS.
+------------------------------------------------------------- */
+:root {
+  --app-font-family: "Adobe Clean", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html,
+body,
+#root,
+#root * {
+  font-family: var(--app-font-family) !important;
+}
+
+/* Also cover pseudo elements and common form controls explicitly */
+*,
+*::before,
+*::after,
+button,
+input,
+textarea,
+select {
+  font-family: var(--app-font-family) !important;
+}
+
+/* Ensure Spectrum variables are locked to the same font */
+:root,
+.spectrum {
+  --spectrum-global-font-family-base: var(--app-font-family) !important;
+  --spectrum-alias-body-text-font-family: var(--app-font-family) !important;
+  --spectrum-alias-heading-text-font-family: var(--app-font-family) !important;
+}
