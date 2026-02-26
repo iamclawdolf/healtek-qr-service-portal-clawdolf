@@ -66,7 +66,7 @@ const ASSET_DATA = {
   status: "Service required",
   nextPmDate: "1st Mar 2026",
   lastServiced: "15th Feb 2025",
-  description: "Economical machine for vacuum forming of foils with built-in vacuum pump. Suitable for the production of bleaching moulds, splints, pads for athletes, etc.",
+  description: "Economical machine for vacuum forming of foils with built-in vacuum pump. Suitable for the production of bleaching moulds, splints, protectors for athletes.",
   warranty: "12 months",
   foilDimensions: "134mm / Square foil: from 120×120mm to 130×130mm",
   dimensions: "24 × 27 × 19 cm",

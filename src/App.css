@@ -89,7 +89,16 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-top: 3px solid var(--danger);
+  position: relative;
+}
+
+.asset-card::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--danger);
+  width: 100%;
+  flex-shrink: 0;
 }
 
 /* Card Header */
@@ -273,15 +282,15 @@ body {
 
 /* Image Column */
 .image-col {
-  flex: 0 0 240px;
+  flex: 0 0 200px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
 }
 
 .asset-image {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: auto;
   object-fit: contain;
 }
 
