@@ -180,15 +180,14 @@ body {
 
 .custom-tab-list {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 22px;
   border-bottom: 1px solid var(--border-color);
   width: 100%;
 }
 
 .custom-tab-item {
   padding: 6px 0;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-secondary);
   font-weight: 500;
   cursor: pointer;
@@ -232,8 +231,8 @@ body {
 }
 
 .info-col {
-  flex: 1 1 auto;
-  max-width: none;
+  flex: 0 0 50%;
+  max-width: 50%;
   min-width: 0;
 }
 
@@ -318,19 +317,17 @@ body {
 
 /* Image Column */
 .image-col {
-  flex: 1 1 0;
-  max-width: none;
-  width: 100%;
-  display: block;
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .asset-image {
-  width: min(100%, 235px);
+  width: 235px;
   height: auto;
   object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  transform: none;
 }
 
 /* Buttons */
@@ -456,10 +453,15 @@ body {
 
 @media (max-width: 768px) {
   .content-grid { flex-direction: column; }
+  .info-col { flex: none; max-width: none; width: 100%; }
   .details-grid { grid-template-columns: 1fr; }
   .status-row { flex-wrap: wrap; gap: 16px; }
-  .image-col { flex: none; max-width: none; width: 100%; justify-content: flex-start; }
-  .asset-image { transform: none; }
-  .custom-tab-list { gap: 8px; }
-  .custom-tab-item { font-size: 11px; }
+  .image-col { flex: none; max-width: none; width: 100%; justify-content: center; }
+  .asset-image { display: block; margin: 0 auto; }
+  .custom-tab-list {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .custom-tab-item { font-size: 12px; }
 }
