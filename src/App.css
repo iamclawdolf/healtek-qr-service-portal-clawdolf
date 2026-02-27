@@ -6,7 +6,7 @@
   --accent: #0EA5E9;
   --danger: #EF4444;
   --border-color: #E5E7EB;
-  --card-padding: 32px;
+  --card-padding: 36px;
   --radius-card: 12px;
   --radius-btn: 6px;
 }
@@ -180,20 +180,22 @@ body {
 
 .custom-tab-list {
   display: flex;
-  gap: 22px;
+  justify-content: space-between;
+  gap: 10px;
   border-bottom: 1px solid var(--border-color);
   width: 100%;
 }
 
 .custom-tab-item {
   padding: 6px 0;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-secondary);
   font-weight: 500;
   cursor: pointer;
   position: relative;
   transition: color 0.2s;
   user-select: none;
+  white-space: nowrap;
 }
 
 .custom-tab-item:hover {
@@ -230,26 +232,31 @@ body {
 }
 
 .info-col {
-  flex: 0 0 50%;
-  max-width: 50%;
+  flex: 1 1 auto;
+  max-width: none;
   min-width: 0;
 }
 
 .product-name {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 10px 0;
 }
 
-/* Meta row - inline product code & serial */
+/* Meta row - stacked product code & serial */
 .meta-row {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  gap: 4px;
   margin-bottom: 14px;
   font-size: 13px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .meta-label {
@@ -311,17 +318,19 @@ body {
 
 /* Image Column */
 .image-col {
-  flex: 0 0 50%;
-  max-width: 50%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex: 1 1 0;
+  max-width: none;
+  width: 100%;
+  display: block;
 }
 
 .asset-image {
-  width: 245px;
+  width: min(100%, 235px);
   height: auto;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transform: none;
 }
 
 /* Buttons */
@@ -335,12 +344,12 @@ body {
   font-size: 13px;
   cursor: pointer;
   border: none;
-  background: #374151;
+  background: #4B5563;
   color: white;
   transition: background 0.15s;
 }
 
-.btn-primary:hover { background: #1F2937; }
+.btn-primary:hover { background: #374151; }
 
 .btn-secondary {
   display: inline-flex;
@@ -368,14 +377,14 @@ body {
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;
-  border: 1px solid #A5F3FC;
-  background: #E0F7FA;
-  color: #0E7490;
+  border: 1px solid #9ADFE8;
+  background: #E8FAFC;
+  color: #0F7D8B;
   margin-top: 12px;
   transition: background 0.15s;
 }
 
-.btn-ask:hover { background: #CFFAFE; }
+.btn-ask:hover { background: #D8F4F8; }
 
 /* Details Grid */
 .details-grid {
@@ -407,8 +416,8 @@ body {
 
 /* Download Section */
 .download-section {
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 24px;
+  padding-top: 24px;
   border-top: 1px solid var(--border-color);
 }
 
@@ -449,5 +458,8 @@ body {
   .content-grid { flex-direction: column; }
   .details-grid { grid-template-columns: 1fr; }
   .status-row { flex-wrap: wrap; gap: 16px; }
-  .image-col { flex: none; }
+  .image-col { flex: none; max-width: none; width: 100%; justify-content: flex-start; }
+  .asset-image { transform: none; }
+  .custom-tab-list { gap: 8px; }
+  .custom-tab-item { font-size: 11px; }
 }
